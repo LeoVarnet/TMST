@@ -4,22 +4,13 @@ clc
 clear all
 close all
 
-[S, fs] = audioread("AMEEE04.wav");
-dur = 1; % seconds
-S = mean(S,2); S = S(8*fs:(8+dur)*fs);% selecting a 5-sec excerpt
+[S, fs] = audioread("LaVoixHumaine_8s.wav");
+dur = length(S)/fs; % seconds
 S = S/rms(S);
 t = (1:length(S))/fs;
 
-% [spectro,f_spectro,t_spectro,spectroPSD]=spectrogram(S,512,10,1:8000,fs,'psd');spectroPSD=2*spectroPSD;
-% 
-% figure; 
-% subplot(3,3,[1 2],'align'); plot(t, S),xlim([0 5])
-% subplot(3,3,[4 5 7 8],'align'); h = pcolor(t_spectro,f_spectro,20*log10(abs(spectroPSD)));set(h,'Edgecolor','none');colormap(ltfat_inferno());
-% xlabel('Time (s)'); ylabel('Frequency (Hz)')
-% subplot(3,3,[6 9],'align'); plot(f_spectro,10*log10(mean(abs(spectroPSD),2)));view([-90 90]);ylabel('PSD (dB/Hz)')
-
 % AM spectrum
-[AMspec, fc, mf, step] = AMspectrum(S, fs);%,'mflow',1,'mfhigh',10000,'modbank_Nmod',500);
+[AMspec, fc, mf, step] = AMspectrum(S, fs);
 
 figure;
 subplot(3,5,[1 2],'align'); plot(t, S); ylim((max(abs(S))+1)*[-1 +1]); xlim([0 dur]);title('waveform');%xlabel('Time (s)'); 
@@ -48,7 +39,6 @@ subplot(5,3,[12 15],'align');
 semilogx(mf, 10*log10(mean(AMspec,2))); hold on
 semilogx(scale_spectro, 20*log10(mean(AMsgram,2))); hold on
 legend({'AM spectrum','Estimated from AM spectro.'}); xlim([min(scale_spectro) max(scale_spectro)]); view([-90 90]); ylabel('dB')
-
 
 %%
 % TODO: permute the dimensions of AMi
