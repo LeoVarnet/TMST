@@ -21,9 +21,9 @@ Before using the Temporal Modulation Spectrum Toolbox, please ensure you have th
 - System Requirements: TMST is designed for Matlab and requires a compatible version of the software to function correctly. It is recommended to use Matlab R2017b or later for optimal performance.
 - Installation: To install the toolbox, follow these steps:
 a. Install the Auditory Modeling Toolbox (AMT) and YIN, as mentioned in the "Dependencies" section above.
-b. Clone or download the TMFT repository and add the toolbox folder to your Matlab path.
+b. Clone or download the TMST repository and add the toolbox folder to your Matlab path.
 c. Run the "startup_TMST.m" script to set up the toolbox environment and load necessary functions.
-- Usage: To use TMFT, call the provided functions from your Matlab script or command window. The "demo_toolbox.m" script illustrates the possibilities of the toolbox on an excerpt from Simone Signoret's voice. 
+- Usage: To use TMST, call the provided functions from your Matlab script or command window. The "demo_toolbox.m" script illustrates the possibilities of the toolbox on an excerpt from Simone Signoret's voice. 
 
 ## References
 
