@@ -58,3 +58,26 @@ subplot(3,7,[14 21],'align'); plot(fc,10*log10(mean(1.9*step.gamma_responses.^2,
 legend({'2*excitation pattern','true envelope power','from aud. AM spec.'}); view([-90 90]); ylabel('dB')
 xlim(fc([1 end]))
 
+%% f0M spectrum
+
+[f0Mspec, mf, step] = f0Mspectrum(S, fs);
+
+figure;
+subplot(2,4,[1 2],'align'); plot(t, S); ylim((max(abs(S))+1)*[-1 +1]); xlim([0 dur]);title('waveform');
+subplot(2,4,[5 6],'align'); plot(step.t, step.f0); ylim([min(step.f0)-30 max(step.f0)+30]); xlim([0 dur]);title('f0'); xlabel('Time (s)'); ylabel('Frequency (Hz)')
+subplot(2,4,[7 8],'align'); semilogx(mf, 10*log10(f0Mspec)); xlim(mf([1 end])); title('f0M spectrum'); ylabel('f0 PSD (dB)');xlabel('Modulation freq. (Hz)'); 
+
+%% f0M spectrogram
+
+[f0Msgram, scale_spectro, step_spectro] = f0Mspectrogram(S, fs);
+
+figure;
+subplot(4,3,[1 2],'align'); plot(t, S); ylim((max(abs(S))+1)*[-1 +1]); xlim([0 dur]);title('waveform');
+subplot(4,3,[4 5],'align'); plot(step_spectro.t, step_spectro.f0); ylim([min(step_spectro.f0)-30 max(step_spectro.f0)+30]); xlim([0 dur]);title('f0'); xlabel('Time (s)'); ylabel('Frequency (Hz)')
+subplot(4,3,[7 8 10 11],'align'); h = pcolor(step_spectro.t, scale_spectro, 20*log10(f0Msgram')); title('f0M spectrogram'); colormap(tmst_inferno()); ylabel('Modulation freq. (Hz)'); xlabel('Time (s)')
+set(h,'Edgecolor','none');set(gca, 'YScale', 'log');
+subplot(4,3,[9 12],'align'); 
+semilogx(mf, 10*log10(f0Mspec)); hold on
+semilogx(scale_spectro, 20*log10(mean(f0Msgram,1))); hold on
+ xlim(mf([1 end])); title('f0M spectrum'); ylabel('f0 PSD (dB)');xlabel('Modulation freq. (Hz)'); 
+legend({'true f0M power','from f0M spectro.'}); view([-90 90]); ylabel('dB')

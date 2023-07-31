@@ -14,10 +14,17 @@ disp(['Added to path: ' dir_Mspectra '\Utility'])
 disp(['Added to path: ' dir_Mspectra '\Local'])
 
 try
-    dir_AMT = Mspectra_dir_amtoolbox; % [userpath filesep 'amtoolbox-code' filesep];
+    dir_AMT = Mspectra_dir_amtoolbox;
 catch me
     Mspectra_set_amtoolbox;
     dir_AMT = Mspectra_dir_amtoolbox;
+end
+
+try
+    dir_YIN = Mspectra_dir_YIN;
+catch me
+    Mspectra_set_YIN;
+    dir_YIN = Mspectra_dir_YIN;
 end
 
 if exist(dir_AMT,'dir')
@@ -34,5 +41,12 @@ else
     end
 end
 
+if exist(dir_YIN,'dir')
+    addpath(genpath([dir_YIN filesep]));
+    disp(['Added to path: ' dir_YIN '\Local'])
+else
+    fprintf('%s: YIN was not added to the path, please modify this script (%s.m)\n',upper(mfilename),mfilename);
+    fprintf('    to include the correct path of the YIN toolbox in your local computer\n');
+end
 
 end
