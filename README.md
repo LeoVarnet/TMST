@@ -13,8 +13,8 @@ TMST is an updated version of the "AM_FM_spectra" scripts used by Varnet et al. 
 ## Dependencies
 
 Before using the Temporal Modulation Spectrum Toolbox, please ensure you have the following dependencies installed:
-- [Auditory Modeling Toolbox](https://amtoolbox.org/): TMST relies on the AMT for auditory modeling computations. Please download and install the AMT toolbox before using TMST.
-- [YIN](http://audition.ens.fr/adc/sw/yin.zip): TMFT utilizes YIN for f0 extraction.
+- [Auditory Modeling Toolbox](https://amtoolbox.org/)
+- [YIN](http://audition.ens.fr/adc/sw/yin.zip)
 
 ## Getting Started
 
