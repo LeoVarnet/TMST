@@ -39,6 +39,6 @@ Thoret, E., Varnet, L., Boubenec, Y., Ferrière, R., Le Tourneau, F.-M., Krause,
 
 This repository can be cited as follows: 
 
-L. Varnet (2023). "Temporal Modulation Spectrum Toolbox: the MATLAB toolbox for investigating amplitude and f0 modulations" 
+L. Varnet (2023). "Temporal Modulation Spectrum Toolbox: A Matlab toolbox for the computation of amplitude- and f0- modulation spectra and spectrograms." 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
