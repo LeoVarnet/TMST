@@ -1,0 +1,1 @@
+This folder is empty at first because it conteins the paths specific to the computer where the toolbox is installed

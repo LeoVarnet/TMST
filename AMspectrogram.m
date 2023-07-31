@@ -58,13 +58,10 @@ fb = cwtfilterbank('SignalLength',length(t),'SamplingFrequency',fs,'FrequencyLim
 for ichan=1:Nchan
     [wt,scale] = cwt(E(:,ichan),'FilterBank',fb);
     if exist('AMsgram')
-        AMsgram(:,:) = AMsgram + abs(wt)/Nchan;
+        AMsgram(:,:) = AMsgram + abs(wt)'/Nchan;
     else
-        AMsgram(:,:) = abs(wt)/Nchan;
+        AMsgram(:,:) = abs(wt)'/Nchan;
     end
-%     [Efft, mf] = periodogram(E(:,ichan),[],f_spectra,fs,'power'); 
-%     Efft=2*Efft; % because the output is a 2-sided periodogram
-%     AMspec(:,ichan) = Efft; % envelope power spectrum
 end
 
 if do_silent == 0

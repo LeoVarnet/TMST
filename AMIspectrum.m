@@ -66,6 +66,7 @@ end
 AMrms = squeeze(sqrt(mean(AMfilt.^2,1)))*sqrt(2);%squeeze(rms(AMfilt,'dim',1));
 DC = squeeze(mean(E,1));%squeeze(rms(E,'dim',1));
 AMIspec = AMrms./(DC'*ones(1,length(mf)));%(AMrms.^2*sqrt(2))./(DC'.^2*ones(1,length(mf))); % check this line
+AMIspec = AMIspec';
 
 if nargout>3
     step.t = t;
@@ -73,7 +74,7 @@ if nargout>3
     step.gamma_responses = gamma_responses;
     step.E = E;
     step.mf = mf;
-    step.AMrms = AMrms;
+    step.AMrms = AMrms';
     step.DC = DC;
 end
 
