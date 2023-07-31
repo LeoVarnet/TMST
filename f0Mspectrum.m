@@ -59,7 +59,8 @@ if do_silent == 0
     fprintf('calculating f0M spectra\n');
 end
 
-[f0Mfft, f_periodo] = plomb(f0withoutnan,twithoutnan,100,16);
+[f0Mfft, f_periodo] = plomb(f0withoutnan,twithoutnan,100,16); %TODO change parameters
+f0Mfft=2*f0Mfft; % because the output is a 2-sided periodogram
 f0Mspec = interpmean( f_periodo, f0Mfft, f_spectra_intervals );
 mf = f_spectra;
     

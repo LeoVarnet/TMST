@@ -1,7 +1,14 @@
 function [AMIspec, fc, mf, step] = AMIspectrum(insig, fs, varargin)
-%AMspectrum Summary of this function goes here
+%AMIspectrum Amplitude modulation excitation pattern
 %   [AMIspec, fc, mf, step] = AMIspectrum(insig, fs, varargin)
-% returns the AMi spectrum as defined in Varnet et al 2017
+% returns the AMi spectrum of signal insig, in excitation units (W).
+% fs: sampling frequency
+% AMIspec is a N-by-M function where N is the number of modulation
+% frequencies (mf) and M is the number of audio frequencies (fc).
+% 
+% see Varnet et al. 2017 for more details
+%
+% Leo Varnet - 07/2023
 
 if nargin<2
   error('%s: Too few input arguments.',upper(mfilename));

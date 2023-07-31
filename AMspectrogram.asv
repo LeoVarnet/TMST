@@ -1,11 +1,11 @@
 function [AMsgram, fc, scale, step] = AMspectrogram(insig, fs, varargin)
 %AMspectrogram Amplitude modulation wavelet spectrogram
 %   [AMsgram, fc, scale, step] = AMspectrogram(insig, fs, varargin)
-% returns the AM wavelet spectrogram of signal insig (wavelet amplitude).
+% returns the AM wavelet spectrogram of signal insig (PSD measured in dB/Hz unit).
 % fs: sampling frequency
 % AMspec is a N-by-M function where N is the number of modulation
 % frequencies (mf) and M is the number of audio frequencies (fc).
-% see Varnet et al. 2017 for more details.
+% see Varnet et al. 2017 for more details
 %
 % Leo Varnet - 07/2023
 

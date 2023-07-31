@@ -17,7 +17,7 @@ figure;
 subplot(3,5,[1 2],'align'); plot(t, S); ylim((max(abs(S))+1)*[-1 +1]); xlim([0 dur]);title('waveform');
 subplot(3,5,[6 7 11 12],'align'); h = pcolor(step.t, fc, 20*log10(step.E'));title('auditory spectrogram');colormap(tmst_inferno());caxis([-80 10]); xlabel('Time (s)'); ylabel('Frequency (Hz)')
 set(h,'Edgecolor','none');
-subplot(3,5,[3 4],'align'); semilogx(mf, 10*log10(mean(AMspec,2))); xlim(mf([1 end])); title('marginalized AM spectrum'); ylabel('mean envelope PSD (dB)');%xlabel('Modulation freq. (Hz)'); 
+subplot(3,5,[3 4],'align'); semilogx(mf, 10*log10(mean(AMspec,2))); xlim(mf([1 end])); title('marginalized AM spectrum'); ylabel('PSD (dB/Hz)');%xlabel('Modulation freq. (Hz)'); 
 subplot(3,5,[8 9 13 14],'align'); h = pcolor(mf, fc, 10*log10(AMspec')); title('AM spectrum'); colormap(tmst_inferno());caxis([-80 10]); xlabel('Modulation freq. (Hz)'); %ylabel('Frequency (Hz)')
 set(h,'Edgecolor','none');set(gca, 'XScale', 'log');
 subplot(3,5,[10 15],'align'); plot(fc,10*log10(mean(1.9*step.gamma_responses.^2,1)),'r'); hold on; plot(fc,10*log10(mean(step.E.^2,1)),'b'); hold on; plot(fc,10*log10(AMspec'*diff(step.mfb)'),'g'); 
