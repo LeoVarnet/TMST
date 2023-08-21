@@ -23,7 +23,25 @@ Before using the Temporal Modulation Spectrum Toolbox, please ensure you have th
 a. Install the Auditory Modeling Toolbox (AMT) and YIN, as mentioned in the "Dependencies" section above.
 b. Clone or download the TMST repository and add the toolbox folder to your Matlab path.
 c. Run the "startup_TMST.m" script to set up the toolbox environment and load necessary functions.
-- Usage: To use TMST, call the provided functions from your Matlab script or command window. The "demo_toolbox.m" script illustrates the possibilities of the toolbox on an excerpt from Simone Signoret's voice. 
+- Usage: To use TMST, call the provided functions from your Matlab script or command window. The "demo_toolbox.m" script illustrates the possibilities of the toolbox on an excerpt from Simone Signoret's voice (see section [Example Walkthrough](#Example-Walkthrough)).
+
+## References
+
+Here are some example use cases of the Temporal Modulation Spectrum Toolbox:
+
+### Speech Signals:
+Varnet, L., Ortiz-Barajas, M. C., Erra, R. G., Gervain, J. & Lorenzi, C. A cross-linguistic study of speech modulation spectra. J. Acoust. Soc. Am. 142, 1976 (2017).
+
+### Natural Soundscapes:
+Thoret, E., Varnet, L., Boubenec, Y., Ferrière, R., Le Tourneau, F.-M., Krause, B., Lorenzi, C. Characterizing amplitude and frequency modulation cues in natural soundscapes: A pilot study on four habitats of a biosphere reserve. The Journal of the Acoustical Society of America 147, 3260–3274 (2020).
+
+## How to cite this repository
+
+This repository can be cited as follows: 
+
+L. Varnet (2023). "Temporal Modulation Spectrum Toolbox: A Matlab toolbox for the computation of amplitude- and f0- modulation spectra and spectrograms." 
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
 ## Example Walkthrough
 
@@ -48,21 +66,3 @@ This is a step-by-step demonstration on the main functions of TMST, applied to t
 ### f0M scalogram
 
 ![f0M scalogram](https://github.com/LeoVarnet/TMST/blob/main/demo_f0Mscalo.jpg?raw=true)
-
-## References
-
-Here are some example use cases of the Temporal Modulation Spectrum Toolbox:
-
-### Speech Signals:
-Varnet, L., Ortiz-Barajas, M. C., Erra, R. G., Gervain, J. & Lorenzi, C. A cross-linguistic study of speech modulation spectra. J. Acoust. Soc. Am. 142, 1976 (2017).
-
-### Natural Soundscapes:
-Thoret, E., Varnet, L., Boubenec, Y., Ferrière, R., Le Tourneau, F.-M., Krause, B., Lorenzi, C. Characterizing amplitude and frequency modulation cues in natural soundscapes: A pilot study on four habitats of a biosphere reserve. The Journal of the Acoustical Society of America 147, 3260–3274 (2020).
-
-## How to cite this repository
-
-This repository can be cited as follows: 
-
-L. Varnet (2023). "Temporal Modulation Spectrum Toolbox: A Matlab toolbox for the computation of amplitude- and f0- modulation spectra and spectrograms." 
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
