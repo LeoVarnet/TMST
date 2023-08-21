@@ -27,7 +27,27 @@ c. Run the "startup_TMST.m" script to set up the toolbox environment and load ne
 
 ## Example Walkthrough
 
-![AM spectrogram](https://github.com/)
+This is a step-by-step demonstration on the main functions of TMST, applied to the sound 'LaVoixHumaine_6s.wav', an excerpt from Jean Cocteau's La Voix Humaine recorded by Simone Signoret.
+
+### AM spectrum
+
+![AM spectrogram](https://github.com/LeoVarnet/TMST/blob/main/demo_AMspectrum.jpg?raw=true)
+
+### AM scalogram
+
+![AM scalogram](https://github.com/LeoVarnet/TMST/blob/main/demo_AMscalo.jpg?raw=true)
+
+### AM wavelet
+
+![AM wavelet](https://github.com/LeoVarnet/TMST/blob/main/demo_AMwavelet.jpg?raw=true)
+
+### f0M spectrum
+
+![AM spectrogram](https://github.com/LeoVarnet/TMST/blob/main/demo_f0Mspectrum.jpg?raw=true)
+
+### f0M scalogram
+
+![f0M scalogram](https://github.com/LeoVarnet/TMST/blob/main/demo_f0Mscalo.jpg?raw=true)
 
 ## References
 
