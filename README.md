@@ -25,6 +25,10 @@ b. Clone or download the TMST repository and add the toolbox folder to your Matl
 c. Run the "startup_TMST.m" script to set up the toolbox environment and load necessary functions.
 - Usage: To use TMST, call the provided functions from your Matlab script or command window. The "demo_toolbox.m" script illustrates the possibilities of the toolbox on an excerpt from Simone Signoret's voice. 
 
+## Example Walkthrough
+
+![AM spectrogram](https://github.com/)
+
 ## References
 
 Here are some example use cases of the Temporal Modulation Spectrum Toolbox:
