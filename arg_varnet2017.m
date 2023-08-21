@@ -22,7 +22,7 @@ definput.flags.modfilter_phase = {'no_phase_insens', 'phase_insens_hilbert'};
 
 % f0 extraction
 % Parameters for YIN
-definput.keyvals.undersample = 10;
+definput.keyvals.undersample = 20;%10;
 definput.keyvals.ap0_thres = 0.8;
 definput.keyvals.yin_thresh = 0.2;
 % Parameters for f0 extraction artifact removing

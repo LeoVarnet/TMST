@@ -48,5 +48,6 @@ else
     fprintf('%s: YIN was not added to the path, please modify this script (%s.m)\n',upper(mfilename),mfilename);
     fprintf('    to include the correct path of the YIN toolbox in your local computer\n');
 end
-
+[filepath,~,~] = fileparts(mfilename('fullpath'));
+cd(filepath);
 end
