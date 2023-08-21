@@ -23,7 +23,7 @@ Before using the Temporal Modulation Spectrum Toolbox, please ensure you have th
 a. Install the Auditory Modeling Toolbox (AMT) and YIN, as mentioned in the "Dependencies" section above.
 b. Clone or download the TMST repository and add the toolbox folder to your Matlab path.
 c. Run the "startup_TMST.m" script to set up the toolbox environment and load necessary functions.
-- Usage: To use TMST, call the provided functions from your Matlab script or command window. The "demo_toolbox.m" script illustrates the possibilities of the toolbox on an excerpt from Simone Signoret's voice (see section [Example Walkthrough](#Example-Walkthrough)).
+- Usage: To use TMST, call the provided functions from your Matlab script or command window. The "demo_toolbox.m" script illustrates the possibilities of the toolbox on an excerpt from Simone Signoret's voice (see section [Example WalkThrough](https://github.com/LeoVarnet/TMST/blob/main/README.md#example-walkthrough)).
 
 ## References
 
