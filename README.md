@@ -47,22 +47,20 @@ L. Varnet (2023). "Temporal Modulation Spectrum Toolbox: A Matlab toolbox for th
 
 This is a step-by-step demonstration on the main functions of TMST, applied to the sound 'LaVoixHumaine_6s.wav', an excerpt from Jean Cocteau's La Voix Humaine recorded by Simone Signoret.
 
-### AM spectrum
+![AM spectrum](https://github.com/LeoVarnet/TMST/blob/main/demo/demo_1.JPG)
+The AM spectrum ("AMa spectrum" in Varnet et al., 2017) is obtained by first computing an auditory spectrogram, then transforming the envelope in each auditory channel to the Fourier domain. The Envelope power spectrum is preserved during these operations (with a small error corresponding to the range of the FFT)
 
-![AM spectrogram](https://github.com/LeoVarnet/TMST/blob/main/demo_AMspectrum.jpg?raw=true)
+![AM auditory spectrum](https://github.com/LeoVarnet/TMST/blob/main/demo/demo_4.jpg)
+Same as the AM spectrum but using more biologically-inspired modulation filterbank, composed of logarithmically-spaced, constant-Q filters. The AMi includes an additional step where each channel is divided by the DC component (Weber constant), see Varnet et al. (2017). The AMi spectrum cannot be marginalized to approximate the Envelope power spectrum.
 
-### AM scalogram
+![AM scalogram](https://github.com/LeoVarnet/TMST/blob/main/demo/demo_2.JPG)
+The AM scalogram is also obtained from the auditory spectrogram of the waveform. Contrary to the AM spectrum, a windowed Fourier transform is used to display the temporal dynamics of the modulation spectrum. The size of the Gaussian window is proportional to the period considered, resulting in a scalogram. The marginalized modulation spectrum does not exactly match the overall modulation spectrum of the signal, partly due to the limited precision of the scalogram.
 
-![AM scalogram](https://github.com/LeoVarnet/TMST/blob/main/demo_AMscalo.jpg?raw=true)
+![AM wavelet](https://github.com/LeoVarnet/TMST/blob/main/demo/demo_3.JPG)
+Same as the AM scalogram but using MATLAB's wavelet function.
 
-### AM wavelet
+![f0M spectrum](https://github.com/LeoVarnet/TMST/blob/main/demo/demo_5.JPG)
+The f0M spectrum corresponds to the FFT of the signal's fundamental frequency, extracted using the YIN toolbox. Because the fundamental frequency is piecewise, a Lomb periodgram function is used.
 
-![AM wavelet](https://github.com/LeoVarnet/TMST/blob/main/demo_AMwavelet.jpg?raw=true)
-
-### f0M spectrum
-
-![AM spectrogram](https://github.com/LeoVarnet/TMST/blob/main/demo_f0Mspectrum.jpg?raw=true)
-
-### f0M scalogram
-
-![f0M scalogram](https://github.com/LeoVarnet/TMST/blob/main/demo_f0Mscalo.jpg?raw=true)
+![f0M scalogram](https://github.com/LeoVarnet/TMST/blob/main/demo/demo_6.JPG)
+An extension of the concept of scalogram to the case of a piecewise signal like the fundamental frequency. Although this representation is not perfect (in particular, no windowing function is applied), it provides an insight into the dynamics of the f0 modulations.
