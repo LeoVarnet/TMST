@@ -6,9 +6,13 @@ TMST is an updated version of the "AM_FM_spectra" scripts used by Varnet et al. 
 
 ## Features
 
-- Computation of Amplitude-Modulation Spectra (AMspectrum.m) and Spectrograms (AMspectrogram.m): TMST allows users to calculate the amplitude-modulation spectrum of an audio signal, providing valuable insights into the temporal changes in signal strength across different modulation rates. This is based on an auditory filterbank decomposition of the signal. The function AMIspectrum computes the excitation pattern in the audio/modulation frequency channels.
+- Computation of Amplitude-Modulation Spectra (AMspectrum.m) and f0-Modulation Spectra (f0Mspectrum.m) from a sound. This provides valuable insight into the amount of temporal modulation present in the signal, across different modulation rates. In the case of speech sounds, the different rhythms have been associated to various linguistic content (phonetic rhythm, syllabic rhythm...). This is based on an auditory filterbank decomposition of the signal.
+  
+- This information can also be displayed as spectrograms (functions AMscalogram.m and f0Mscalogram.m) to reveal the dynamics of the modulation rhythms across time.
+  
+- The function AMIspectrum.m computes the excitation pattern in the audio/modulation frequency channels, using a simple model of the human aditory system.
 
-- Computation of F0-Modulation Spectra (f0Mspectrum.m): The toolbox also allows the computation of f0-modulation spectra, which reveals variations in the fundamental frequency across different modulation rates.
+See section [Example WalkThrough](https://github.com/LeoVarnet/TMST/blob/main/README.md#example-walkthrough) for an illustration of the use of these functions.
 
 ## Dependencies
 
