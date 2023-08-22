@@ -1,4 +1,4 @@
-function startup_Mspectra
+function startup_TMST
 % function startup_fastACI
 %
 % Programmed by Alejandro Osses, ENS 2021-
@@ -12,6 +12,7 @@ disp(['Added to path: ' dir_Mspectra])
 disp(['Added to path: ' dir_Mspectra '\legacy'])
 disp(['Added to path: ' dir_Mspectra '\Utility'])
 disp(['Added to path: ' dir_Mspectra '\Local'])
+disp(['Added to path: ' dir_Mspectra '\demo'])
 
 try
     dir_AMT = Mspectra_dir_amtoolbox;
