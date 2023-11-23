@@ -52,7 +52,7 @@ f_bw = audfiltbw(fc);
 if do_silent == 0
     fprintf('E extraction\n');
 end
-E = abs(hilbert(gamma_responses));
+E = abs(hilbert(squeeze(gamma_responses)));
 
 Nchan = length(fc);
 %%% AMi spectra
