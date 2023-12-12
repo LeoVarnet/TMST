@@ -42,13 +42,14 @@ maxjump = kv.maxjump;
 minduration = kv.minduration;
 minf = kv.minf;
 maxf = kv.maxf;
+var_thres = kv.var_thres;
 
 P=[]; P.hop = undersample; P.sr = fs; P.minf0 = minf; P.maxf0 = maxf; P.thresh = yin_thresh;
 
 R = yin(insig(:), P);
 f0 = 440*2.^(R.f0);
 f0_withnan = f0; f0_withnan(R.ap0>ap0_thres) = NaN;
-f0_withnan = remove_artifacts_FM( f0_withnan, fs/undersample, maxjump, minduration, [minf maxf], [0.4 2.5], 1500, 0);
+f0_withnan = remove_artifacts_FM( f0_withnan, fs/undersample, maxjump, minduration, [minf maxf], [0.4 2.5], var_thres, 0);
 t_f0 = (1:length(f0_withnan))/(fs/undersample);
 
 f0withoutnan = f0_withnan; f0withoutnan(isnan(f0_withnan))=[];
