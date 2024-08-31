@@ -30,4 +30,5 @@ definput.keyvals.maxjump = 10;
 definput.keyvals.minduration = 0.08;
 definput.keyvals.minf = 60;
 definput.keyvals.maxf = 550;
+definput.keyvals.var_thres = 1500;
 
