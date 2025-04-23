@@ -1,12 +1,11 @@
-function [AMIspec, fc, mf, step] = AMIspectrum(insig, fs, varargin)
-%AMIspectrum Amplitude modulation excitation pattern
-%   [AMIspec, fc, mf, step] = AMIspectrum(insig, fs, varargin)
-% returns the AMi spectrum of signal insig, in excitation units (W).
+function [AMsgram, fc, scale, step] = AMspectrogram(insig, fs, varargin)
+%AMspectrogram Amplitude modulation wavelet spectrogram
+%   [AMsgram, fc, scale, step] = AMspectrogram(insig, fs, varargin)
+% returns the AM wavelet spectrogram of signal insig (wavelet amplitude).
 % fs: sampling frequency
-% AMIspec is a N-by-M function where N is the number of modulation
+% AMspec is a N-by-M function where N is the number of modulation
 % frequencies (mf) and M is the number of audio frequencies (fc).
-% 
-% see Varnet et al. 2017 for more details
+% see Varnet et al. 2017 for more details.
 %
 % Leo Varnet - 07/2023
 
@@ -33,8 +32,8 @@ do_silent = 1;
 mflow  = kv.mflow;
 mfhigh = kv.mfhigh;
 N_fsamples = kv.modbank_Nmod; 
-% f_spectra_intervals = logspace(log10(mflow), log10(mfhigh), N_fsamples+1);
-% f_spectra           = logspace(log10(sqrt(f_spectra_intervals(1)*f_spectra_intervals(2))), log10(sqrt(f_spectra_intervals(end)*f_spectra_intervals(end-1))), N_fsamples);
+f_spectra_intervals = logspace(log10(mflow), log10(mfhigh), N_fsamples+1);
+f_spectra           = logspace(log10(sqrt(f_spectra_intervals(1)*f_spectra_intervals(2))), log10(sqrt(f_spectra_intervals(end)*f_spectra_intervals(end-1))), N_fsamples);
 
 % Number of steps in fractional octaves to go from mod_flow to mod_fhigh:
 % N_octave_steps = ceil(NthOct * log10(mod_fhigh/mod_flow)/log10(2));
@@ -55,34 +54,34 @@ end
 E = abs(hilbert(squeeze(gamma_responses)));
 
 Nchan = length(fc);
-%%% AMi spectra
+%%% AM spectra
 if do_silent == 0
-    fprintf('calculating envelope spectra\n');
+    fprintf('calculating envelope wavlets\n');
+end
+fb = cwtfilterbank('SignalLength',length(t),'SamplingFrequency',fs,'FrequencyLimits',[mflow mfhigh],'Wavelet','morse');%'TimeBandwidth',120,
+
+%freqz(fb)
+for ichan=1:Nchan
+    [wt,scale] = cwt(E(:,ichan),'FilterBank',fb);
+    if exist('AMsgram')
+        AMsgram(:,:) = AMsgram + abs(wt)'/Nchan;
+    else
+        AMsgram(:,:) = abs(wt)'/Nchan;
+    end
 end
 
-% using the king2019_modfilterbank function
-[AMfilt, mf] = king2019_modfilterbank_updated(E,fs,'argimport',flags,kv); 
-
-% % using the modfilterbank function
-% [AMfilt_temp, mf] = modfilterbank(E,fs,fc,'argimport',flags,kv);
-% AMfilt=nan(length(t),length(fc),length(mf));
-% for i=1:length(AMfilt_temp)
-%     AMfilt(:,i,1:size(AMfilt_temp{i},2)) = abs(AMfilt_temp{i});
-% end
-
-AMrms = squeeze(sqrt(mean(AMfilt.^2,1)))*sqrt(2);%squeeze(rms(AMfilt,'dim',1));
-DC = squeeze(mean(E,1));%squeeze(rms(E,'dim',1));
-AMIspec = AMrms./(DC'*ones(1,length(mf)));%(AMrms.^2*sqrt(2))./(DC'.^2*ones(1,length(mf))); % check this line
-AMIspec = AMIspec';
+if do_silent == 0
+    figure; h = pcolor(t,scale,abs(AMsgram(:,:)));
+    set(h,'EdgeColor', 'none');
+    set(gca, 'YScale', 'log');
+end
 
 if nargout>3
     step.t = t;
     step.f_bw = f_bw;
     step.gamma_responses = gamma_responses;
     step.E = E;
-    step.mf = mf;
-    step.AMrms = AMrms';
-    step.DC = DC;
+    step.scale = scale;
 end
 
 end

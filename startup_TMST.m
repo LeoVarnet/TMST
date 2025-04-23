@@ -5,14 +5,14 @@ function startup_TMST
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 dir_Mspectra  = [fileparts(which(mfilename)) filesep];
 addpath(dir_Mspectra);
-addpath([dir_Mspectra '\legacy']);
-addpath([dir_Mspectra '\Utility']);
-addpath([dir_Mspectra '\Local']);
+addpath([dir_Mspectra 'legacy']);
+addpath([dir_Mspectra 'Utility']);
+addpath([dir_Mspectra 'Local']);
 disp(['Added to path: ' dir_Mspectra])
-disp(['Added to path: ' dir_Mspectra '\legacy'])
-disp(['Added to path: ' dir_Mspectra '\Utility'])
-disp(['Added to path: ' dir_Mspectra '\Local'])
-disp(['Added to path: ' dir_Mspectra '\demo'])
+disp(['Added to path: ' dir_Mspectra 'legacy'])
+disp(['Added to path: ' dir_Mspectra 'Utility'])
+disp(['Added to path: ' dir_Mspectra 'Local'])
+disp(['Added to path: ' dir_Mspectra 'demo'])
 
 try
     dir_AMT = Mspectra_dir_amtoolbox;
