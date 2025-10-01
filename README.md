@@ -1,7 +1,7 @@
 # Temporal Modulation Spectrum Toolbox (TMST)
 ## Overview
 
-The Temporal Modulation Spectrum Toolbox is a Matlab toolbox designed for the computation of amplitude- and f0-modulation spectra and spectrograms. This versatile toolbox has been developed to analyze temporal modulations in audio signals and has proven useful in various research applications, including speech signal analysis and the study of natural soundscapes.
+The Temporal Modulation Spectrum Toolbox is a Matlab toolbox designed for the computation of amplitude and f0 modulation spectra and spectrograms. This versatile toolbox has been developed as part of the DRhyaDS project (ANR-22-FRAL-0003) to analyze temporal modulations in audio signals and has proven useful in various research applications, including speech signal analysis and the study of natural soundscapes.
 TMST is an updated version of the "AM_FM_spectra" scripts used by Varnet et al. (2017) and available on Github (https://github.com/LeoVarnet/AM_FM_Spectra). While the core functionality remains the same, certain parameters, such as the modulation quality factor Q, have been refined to enhance the accuracy of the analysis. Please note that, because of these changes, the authors cannot guarantee exact reproducibility of results as obtained with the previous scripts.
 
 ## Features
